@@ -18,6 +18,8 @@ public class Chapter_n8 {
 		w.heal(h1);
 		w.heal(h2);
 		
+		SuperHero sh = new SuperHero();
+		sh.run();
 		
 		Matango m1 = new Matango();
 		m1.hp = 50;
@@ -27,7 +29,7 @@ public class Chapter_n8 {
 		m2.suffix = 'B';
 		
 		h1.slip();
-		h1.attack();
+		h1.attack(m1);
 		m1.run();
 		m2.run();
 		h1.run();

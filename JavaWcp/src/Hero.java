@@ -27,8 +27,9 @@ public class Hero {
 		System.out.println("最終HPは" + this.hp + "でした");
 	}
 	
-	public void attack() {
+	public void attack(Matango m) {
 		System.out.println(this.name + "は" + sword.name + "で攻撃した！");
+		m.hp -= 5;
 		System.out.println("敵に5ポイントのダメージを与えた！");
 	}
 	
