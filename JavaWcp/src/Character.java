@@ -7,7 +7,7 @@ public abstract class Character {
 		System.out.println(this.name + "逃げ出した");
 	}
 	
-	public abstract void attack(Matango m) {	
+	public void attack(Matango m) {	
 	}	
 
 }

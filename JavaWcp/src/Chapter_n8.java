@@ -12,21 +12,21 @@ public class Chapter_n8 {
 		
 		Hero h2 = new Hero("アサカ");
 		
+		Matango m1 = new Matango('A');
+		m1.hp = 50;
+		Matango m2 = new Matango('B');
+		m2.hp = 50;
+		
 		Wizard w = new Wizard();
 		w.name = "スガワラ";
 		w.hp = 50;
 		w.heal(h1);
 		w.heal(h2);
+		w.attack(m1);
+		w.fireball(m2);
 		
 		SuperHero sh = new SuperHero();
 		sh.run();
-		
-		Matango m1 = new Matango();
-		m1.hp = 50;
-		m1.suffix = 'A';
-		Matango m2 = new Matango();
-		m2.hp = 50;
-		m2.suffix = 'B';
 		
 		h1.slip();
 		h1.attack(m1);
