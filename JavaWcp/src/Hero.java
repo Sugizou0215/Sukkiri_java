@@ -1,7 +1,7 @@
 
 public class Hero {
-	String name;
-	int hp;
+	private String name;
+	private int hp;
 	Sword sword;
 	
 	public void sleep() {
@@ -31,6 +31,26 @@ public class Hero {
 		System.out.println(this.name + "は" + sword.name + "で攻撃した！");
 		m.hp -= 5;
 		System.out.println("敵に5ポイントのダメージを与えた！");
+	}
+	
+	public void die() {
+		System.out.println(this.name + "は死んでしまった！");
+		System.out.println("GAMEOVERです");
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		if (name == null) {
+			throw new IllegalArgumentException("名前がnullである。処理を中断。");
+		} else if (name.length() <= 1) {
+			throw new IllegalArgumentException("名前が短すぎる。処理を中断。");
+		} else if (name.length() >= 8) {
+			throw new IllegalArgumentException("名前が長すぎる。処理を中断。");
+		}
+		this.name = name;
 	}
 	
 	public Hero(String name) {
