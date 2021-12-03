@@ -3,6 +3,11 @@ public class Hero {
 	private String name;
 	private int hp;
 	Sword sword;
+	static int money = 100;
+	
+	public static void setRandomMoney() {
+		Hero.money = (int)(Math.random() * 1000);
+	}
 	
 	public void sleep() {
 		this.hp = 100;
@@ -59,6 +64,23 @@ public class Hero {
 	
 	public void setHp(int hp) {
 		this.hp = hp;
+	}
+	
+	public String toString() {
+		return "名前：" + this.name + "HP：" + this.hp;
+	}
+	
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o instanceof Hero) {
+			Hero h = (Hero)o;
+			if (this.name.equals(h.name)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Hero(String name) {

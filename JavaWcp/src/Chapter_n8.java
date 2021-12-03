@@ -6,9 +6,11 @@ public class Chapter_n8 {
 		s.damage = 10;
 		Hero h1 = new Hero("ミナト");
 		h1.sword = s;
-		System.out.println("勇者" + h1.name + "を生み出しました！");
+		System.out.println("勇者" + h1.getName() + "を生み出しました！");
 		System.out.println("現在の武器は" + h1.sword.name);
-		System.out.println("HPは" + h1.hp);
+		System.out.println("HPは" + h1.getHp());
+		Hero.setRandomMoney();
+		System.out.println(Hero.money);
 		
 		Hero h2 = new Hero("アサカ");
 		
@@ -18,8 +20,8 @@ public class Chapter_n8 {
 		m2.hp = 50;
 		
 		Wizard w = new Wizard();
-		w.name = "スガワラ";
-		w.hp = 50;
+		w.setName("スガワラ");
+		w.setHp(50);
 		w.heal(h1);
 		w.heal(h2);
 		w.attack(m1);
