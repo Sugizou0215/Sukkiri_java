@@ -3,9 +3,9 @@ import java.util.Random;
 public class Cleric {
 	String name;
 	int hp = 50;
-	final int maxHp = 50;
+	static final int maxHp = 50;
 	int mp = 50;
-	final int maxMp = 10;
+	static final int maxMp = 10;
 	
 	public void selfAid() {
 		System.out.println(this.name + "は、セルフエイドを唱えた！");
