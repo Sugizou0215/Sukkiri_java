@@ -41,6 +41,13 @@ public class Chapter_n15 {
 		for (int i = 0; i < 10000; i++) {
 			sb.append("Java");
 		}
-		String s = sb.toString();
+		String s6 = sb.toString();
+		System.out.println(s6);
+		
+		String s7 = "abc,def:ghi";
+		String[] words = s7.split("[,:]");
+		for (String w : words) {
+			System.out.println(w + "=>");
+		}
 	}
 }
