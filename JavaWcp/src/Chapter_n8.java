@@ -36,5 +36,8 @@ public class Chapter_n8 {
 		m2.run();
 		h1.run();
 		
+		final String FORMAT = "%-9s %-13s 所持金%,6d";
+		String f = String.format(FORMAT, h1.getName(), h1.getHp(), Hero.money);
+		System.out.println(f);
 	}
 }

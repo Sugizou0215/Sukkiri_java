@@ -5,6 +5,10 @@ public class Hero {
 	Sword sword;
 	static int money = 100;
 	
+	public boolean isValidPlayerName(String name) {
+		return name.matches("[A-Z][A-Z0-9]{7}");
+	}
+	
 	public static void setRandomMoney() {
 		Hero.money = (int)(Math.random() * 1000);
 	}
