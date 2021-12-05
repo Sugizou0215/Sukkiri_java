@@ -1,7 +1,23 @@
-
+import java.util.Calendar;
+import java.util.Date;
 
 public class Chapter_n15 {
 	public static void main(String[] args) {
+		Date now = new Date();
+		System.out.println(now);
+		
+		Calendar c = Calendar.getInstance();
+		c.set(2021, 12, 5, 13, 3, 5);
+		int year = c.get(Calendar.YEAR);
+		int month = c.get(Calendar.MONTH);
+		int day = c.get(Calendar.DAY_OF_MONTH);
+		int hour = c.get(Calendar.HOUR);
+		int minute = c.get(Calendar.MINUTE);
+		int second = c.get(Calendar.SECOND);
+		
+		System.out.println(year + "年" + month + "月" + day +  "日" + hour + "時" + minute + "分" + second + "秒");
+		
+		long start = System.currentTimeMillis();
 		String s1 = "スッキリJava";
 		String s2 = "Java";
 		String s3 = "java";
@@ -48,6 +64,9 @@ public class Chapter_n15 {
 		String[] words = s7.split("[,:]");
 		for (String w : words) {
 			System.out.println(w + "=>");
+			
+		long end = System.currentTimeMillis();
+		System.out.println("処理にかかった時間は" + (end - start) + "ミリ秒でした");
 		}
 	}
 }
