@@ -1,3 +1,9 @@
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,6 +22,37 @@ public class Chapter_n15 {
 		int second = c.get(Calendar.SECOND);
 		
 		System.out.println(year + "年" + month + "月" + day +  "日" + hour + "時" + minute + "分" + second + "秒");
+		
+		Instant i1 = Instant.now();
+		Instant i2 = Instant.ofEpochMilli(160070542827L);
+		long l = i2.toEpochMilli();
+		
+		ZonedDateTime z1 = ZonedDateTime.now();
+		ZonedDateTime z2 = ZonedDateTime.of(2020, 1, 2, 3, 4, 5, 6, ZoneId.of("Asia/Tokyo"));
+		
+		Instant i3 = z2.toInstant();
+		ZonedDateTime z3 = i3.atZone(ZoneId.of("europe/London"));
+		
+		System.out.println("東京" + z2.getYear() + z2.getMonth() + z2.getDayOfMonth());
+		System.out.println("ロンドン" + z3.getYear() + z3.getMonth() + z3.getDayOfMonth());
+		if (z2.isEqual(z3)) {
+			System.out.println("これらは同じ瞬間を指しています");
+		}
+		
+		LocalDateTime l1 = LocalDateTime.now();
+		LocalDateTime l2 = LocalDateTime.of(2020, 1, 1, 9 ,5, 0, 0);
+		
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		LocalDate ldate = LocalDate.parse("2020/09/22", fmt);
+		
+		LocalDate ldatep = ldate.plusDays(1000);
+		String str = ldatep.format(fmt);
+		System.out.println("1000日後は" + str);
+		
+		LocalDate now1 = LocalDate.now();
+		if (now1.isAfter(ldatep)) {
+			System.out.println("1000日後は過去日付です");
+		}
 		
 		long start = System.currentTimeMillis();
 		String s1 = "スッキリJava";
