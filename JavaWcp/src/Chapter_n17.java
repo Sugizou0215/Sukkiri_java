@@ -24,4 +24,10 @@ public class Chapter_n17 {
 			}		
 		}
 	}
+	
+	public static void subsub() throws IOException {
+		FileWriter fw = new FileWriter("data.txt");
+		fw.write("hello,world!");
+		fw.close();
+	}
 }
